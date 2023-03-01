@@ -1,4 +1,6 @@
 ﻿
+using System.Collections;
+
 string title = @"
    ____            _            _  __               _           _       _                             
   / ___|__ _  __ _| | __ _ _ __| |/ /__ _ _ __ __ _| |__  _   _| |_   _| |_        ___ ___  _ __ ___  
@@ -30,6 +32,35 @@ dizi[3] = 10;
 Console.WriteLine(hayvanlar[1]);
 Console.WriteLine(dizi[3]);
 Console.WriteLine(renkler[0]);
+
+
+// hayvanlar dizisindeki elemanları virgül ile ayırarak yazma
+Console.WriteLine("\nHayvanlar dizisi virgüllü: " + string.Join(", ", hayvanlar));
+Console.WriteLine(hayvanlar);
+
+
+
+// ArrayList sınıfı kullanımı: using System.Collections; kütüphanesini ekliyoruz.
+// örnek verilen dizideki çift sayıları bulalım. dizinin kaç elemanlı olduğunu baştan bilemiyoruz.
+// diziye instance veremediğimiz için atama yapamayız. ama ArrayList bu imkanı sağlıyor.
+
+int[] sayilar = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+ArrayList ciftSayilar = new ArrayList();
+
+for (int i = 0; i < sayilar.Length; i++)
+{
+    if (sayilar[i] % 2 == 0)
+    {
+        ciftSayilar.Add(sayilar[i]);
+    }
+}
+
+Console.WriteLine("\nÇift sayılar: " + string.Join(", ", ciftSayilar.ToArray()));  // ArrayList te string.Join kullanırken ToArray() ekliyoruz. 
+
+
+
+
+
 
 
 
